@@ -6,3 +6,52 @@ html, body {
 label {
   font-weight: bold;
 }
+
+.navbar .nav-item a {
+  padding-left: 0.7rem !important;
+  padding-right: 0.7rem !important;
+  position: relative
+}
+.navbar .nav-item a .badge {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  border-radius: 50%;
+  font-size: 60%;
+  padding: 3px 5px;
+  border: 1px solid white;
+}
+.store {
+  background-image: url("assets/img/main-fondo.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  padding-top: 30px;
+  overflow: auto;
+}
+
+.store .navbar {
+  border-radius: 5px;
+}
+
+.store .card .card-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.store .catalog {
+  height: 600px ;
+  overflow: auto;
+}
+.store .catalog .card {
+  overflow: hidden;
+}
+.store .catalog .card .details button{
+  margin-top: -5px;
+}
+.store .catalog .card input{
+  display: inline-block;
+  width: 50px;
+  padding: 6px 5px;
+}

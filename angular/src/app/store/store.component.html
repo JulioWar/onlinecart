@@ -1,3 +1,36 @@
-<p>
-  store works!
-</p>
+<div class="row">
+  <div class="col-md-8">
+    <h3>Cat&aacute;logo de productos</h3>
+  </div>
+  <div class="col-md-4">
+    <h5>¿Qu&eacute; estas buscando?</h5>
+    <input type="search" [(ngModel)]="search" (ngModelChange)="onSearch()" class="form-control" placeholder="Buscar producto">
+    <pre>{{ search }}</pre>
+  </div>
+</div>
+<hr class="mt-5 mb-2">
+
+<div class="row catalog">
+  <div class="alert" *ngIf="error">
+    {{ error }}
+  </div>
+  <div class="col-lg-4 col-md-6 mt-3" *ngFor="let product of productFilter">
+    <div class="card">
+      <div class="card-image" [style.background-image]="'url(./assets/img/' + product.image +' )'"></div>
+      <div class="card-body">
+        <h4>{{ product.description }}</h4>
+        <p><b>Precio:</b> ${{ product.price }}</p>
+        <p><b>Unidades Disponibles:</b> {{ product.stock - amountInCart(product.id) }}</p>
+        <div class="row mt-2">
+          <div class="col-4">
+            <a [routerLink]="'/store/product/' + product.description" class="btn btn-primary">Ver mas</a>
+          </div>
+          <div class="col-8 text-right align-text-top details">
+            <button class="btn btn-warning" (click)="addProduct(product)">Agregar</button>
+            <input type="number" [(ngModel)]="product.amount" min="0" [max]="product.stock" class="form-control">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

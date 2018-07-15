@@ -1,17 +1,43 @@
 <div class="login-page">
     <div class="login-form">
-      <form >
+      <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
         <div class="form-group">
           <label for="email">Correo electr&oacute;nico:</label>
-          <input type="email" required class="form-control" id="email">
+          <input type="email"
+                 formControlName="email"
+                 [ngClass]="{'is-invalid': !form.controls['email'].valid && form.controls['email'].touched } "
+                 class="form-control"
+                 id="email" >
+          <span class="invalid-feedback"
+                *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">
+            El Correo es requerido
+          </span>
+          <span class="invalid-feedback"
+                *ngIf="form.controls['email'].hasError('email')">
+            Tiene que ser un correo valido.
+          </span>
         </div>
         <div class="form-group">
-          <label for="password">Contrase&ntilde;a</label>
-          <input type="password" required class="form-control" id="password">
+          <label for="password">Contrase&ntilde;a:</label>
+          <input type="password"
+                 formControlName="password"
+                 [ngClass]="{'is-invalid': !form.controls['password'].valid && form.controls['password'].touched } "
+                 class="form-control"
+                 id="password" >
+          <span class="invalid-feedback"
+                *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">
+            La Contrase&ntilde;a es requerida
+          </span>
         </div>
         <div class="text-center">
-          <input type="submit" class="btn btn-success" value="Ingresar">
+          <input type="submit"
+                 [disabled]="form.invalid || processing"
+                 class="btn btn-success"
+                 [value]="(processing) ? 'Verificando' : 'Ingresar' ">
         </div>
       </form>
+      <div class="alert alert-danger mt-3" *ngIf="error">
+        <p>{{ error }}</p>
+      </div>
     </div>
 </div>
