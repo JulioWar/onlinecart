@@ -1,3 +1,4 @@
+/* GENERAL STYLE */
 html, body, #app, main {
   height: 100%;
 }
@@ -20,6 +21,8 @@ label {
   padding: 3px 5px;
   border: 1px solid white;
 }
+
+/* STYLE FOR THE STORE VIEW  */
 .store {
   background-image: url("../../assets/img/main-fondo.jpg");
   background-size: cover;
@@ -55,6 +58,7 @@ label {
   padding: 6px 5px;
 }
 
+/* STYLE FOR THE LOGIN PAGE*/
 .login-page {
   background-image: url("../../assets/img/login-fondo.jpg");
   background-size: cover;
@@ -84,16 +88,17 @@ label {
   margin: 0 auto;
 }
 
-.list-group-item img {
-  max-width: 55px;
-  margin-right: 10px;
-}
-
-
 @media (max-width: 768px) {
   .login-page .login-form {
     width: 90%;
   }
+}
+
+
+/* STYLE FOR THE ITEMS IN THE CART VIEW */
+.list-group-item img {
+  max-width: 55px;
+  margin-right: 10px;
 }
 
 

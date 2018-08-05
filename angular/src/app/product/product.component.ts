@@ -4,8 +4,7 @@ import {ServerService} from '../services/server.service';
 
 @Component({
   selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  templateUrl: './product.component.html'
 })
 export class ProductComponent implements OnInit {
 
@@ -34,6 +33,10 @@ export class ProductComponent implements OnInit {
         this.router.navigate(['store']);
       }
     })
+  }
+
+  prouductInCart() {
+    return this.server.amountInCart(this.product.id);
   }
 
 }

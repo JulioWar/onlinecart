@@ -31,7 +31,6 @@ export class LoginComponent {
   }
 
   public onSubmit(value: any) {
-    console.log('value', value);
     if (this.processing) return;
 
     this.processing = true;

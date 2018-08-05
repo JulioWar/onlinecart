@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter as Router, Route, Redirect, has} from 'react-router-dom';
+import {HashRouter as Router, Route, Redirect} from 'react-router-dom';
 // components
 import Login from './Login.jsx';
 import App from './App.jsx';

@@ -8,7 +8,6 @@ class Cart extends React.Component {
     constructor() {
         super();
         this.state = {
-            error: '',
             redirect: false,
             processing: false
         };
@@ -16,7 +15,7 @@ class Cart extends React.Component {
 
     cancelCart() {
         this.props.deleteCartProducts();
-        this.state.redirect = true;
+        this.setState({redirect: true});
     }
 
     payCart() {
@@ -41,7 +40,7 @@ class Cart extends React.Component {
                     if (err || !res.ok) {
                         alert('ocurrio un error al confirmar la compra, vuelva a intentarlo');
                     } else {
-                        this.props.deleteCartProducts();
+                        this.cancelCart();
                     }
                 });
             }

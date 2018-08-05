@@ -76,7 +76,7 @@ class Login extends React.Component {
                 <div className="login-form">
                     <form onSubmit={this.handleSubmit.bind(this)}>
                         <div className="form-group">
-                            <label htmlFor="email">Correo elect&oacute;nico:</label>
+                            <label htmlFor="email">Correo electr&oacute;nico:</label>
                             <input type="email" 
                                 name="email"
                                 value={this.state.email} 

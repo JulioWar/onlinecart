@@ -28,7 +28,6 @@ class App extends React.Component {
     }
 
     addProductToCart(product) {
-        console.log('addProductToCart', product);
         let products = update(this.state.cartProducts, {$push: [product]});
         this.setState({cartProducts: products});
     }
@@ -63,7 +62,7 @@ class App extends React.Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div className="collapse navbar-collapse show" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                             <Link to="/store" className="nav-link"><i className="fa fa-th"></i></Link>

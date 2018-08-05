@@ -28,7 +28,6 @@ class Store extends React.Component {
     onSearch(event) {
         let search = event.target.value;
         let products = [];
-        console.log('searching', search);
 
         if (search) {
             products = this.state.products.filter((item) => {
@@ -45,7 +44,6 @@ class Store extends React.Component {
     }
 
     addProduct(product, index) {
-        console.log('add product', product);
         this.props.addProductToCart(product);
         let item = Object.assign({}, product);
 
@@ -62,6 +60,7 @@ class Store extends React.Component {
             products: updatedProducts,
             productsFilter: updatedProductFilter
         });
+        this.props.productChanges(updatedProducts);
     }
 
     getProducts() {
