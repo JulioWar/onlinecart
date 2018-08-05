@@ -56,13 +56,13 @@ export class CartComponent {
           },
           () => {
             this.processing = false;
-            alert('ocurrion un error al confirmar la compra, vuelva a intentarlo')
+            alert('ocurrio un error al confirmar la compra, vuelva a intentarlo')
           }
         );
       },
       () => {
         this.processing = false;
-        alert('ocurrion un error al confirmar la compra, vuelva a intentarlo')
+        alert('ocurrio un error al confirmar la compra, vuelva a intentarlo')
       }
     )
   }

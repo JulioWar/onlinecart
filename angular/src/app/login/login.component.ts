@@ -42,7 +42,6 @@ export class LoginComponent {
         const result: any = users.filter((user) => {
           return user && user.email == value.email && user.password == value.password;
         });
-        console.log('result', result);
         if (result.length > 0) {
           localStorage.setItem('user', JSON.stringify(result[0]));
           this.router.navigate(['store']);
